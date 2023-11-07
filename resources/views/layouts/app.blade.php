@@ -63,6 +63,9 @@
                         Options
                             <ul class="absolute hidden group-hover:block bg-gray-200 p-2">
                                 <li>
+                                    <a href="#">Admin Panel</a>
+                                </li>
+                                <li>
                                     <a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
