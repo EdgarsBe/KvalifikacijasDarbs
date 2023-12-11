@@ -15,10 +15,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     </head>
-    <body class="max-h-[200vh] min-h-[100vh] bg-[#E0E7E9] font-[Poppins]">
+    <body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
         <div>
             @if (Route::has('login'))
-            <header class="border-b-[0.5vh] border-[#6C7A89] bg-[#354649]">
+            <header class="border-b-[0.5vh] border-primary-300 bg-primary-400">
                 <nav class="p-[1vh] flex justify-between items-center w-[92%] mx-auto">
                     <ul>
                         <li>
@@ -29,32 +29,32 @@
                     </ul>
                     <ul class="flex items-center gap-[4vw]">
                         <li>
-                            <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">Browse</a>
+                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Browse</a>
                         </li>
                         <li>
-                            <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">Categories</a>
+                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Categories</a>
                         </li>
                         <li>
-                            <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">News</a>
+                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">News</a>
                         </li>
                         <li>
-                            <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">About Us</a>
+                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">About Us</a>
                         </li>
                     </ul>
                     @auth
                     <ul>
-                        <li class="text-[#E0E7E9]">
+                        <li class="text-white hover:text-hover active:text-active">
                             <a href="{{ url('/MyProfile') }}">My Profile</a>
                         </li>
                     </ul>    
                         @else
                     <ul class="flex items-center gap-[0.2vw]">
                         <li>
-                            <a class="transition duration-500 text-[#E0E7E9] px-5 py-2 rounded-xl hover:bg-[#6C7A89] active:bg-white" href="{{ route('login') }}">Log in</a>
+                            <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('login') }}">Log in</a>
                         </li>
                         @if (Route::has('register'))
                         <li>
-                            <a class="transition duration-500 bg-[#70a48a] text-white px-5 py-2 rounded-xl hover:bg-[#4dba84] active:bg-[#70a48a]" href="{{ route('register') }}">Register</a>
+                            <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('register') }}">Register</a>
                         </li>
                     </ul>
                     @endif

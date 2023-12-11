@@ -21,10 +21,11 @@
     <!-- Scripts -->
     @vite('resources/css/app.css')
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-<body class="max-h-[200vh] min-h-[100vh] bg-[#E0E7E9] font-[Poppins]">
+<body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
     <div id="app">
-        <nav class="border-b-[0.5vh] border-[#6C7A89] bg-[#354649] ">
+        <nav class="border-b-[0.5vh] border-primary-300 bg-primary-400 ">
             <div class="p-[1vh] flex justify-between items-center w-[92%] mx-auto">
                 <ul>
                     <a href="{{ url('/') }}">
@@ -33,16 +34,16 @@
                 </ul>
                 <ul class="pl-[3vw] flex items-center gap-[4vw]">
                     <li>
-                        <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">Browse</a>
+                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Browse</a>
                     </li>
                     <li>
-                        <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">Categories</a>
+                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Categories</a>
                     </li>
                     <li>
-                        <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">News</a>
+                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">News</a>
                     </li>
                     <li>
-                        <a class="text-[#E0E7E9] hover:text-[#868595] transition duration-300" href="#">About Us</a>
+                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">About Us</a>
                     </li>
                 </ul>
                 <ul class="flex items-center gap-[0.2vw]">
@@ -50,13 +51,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li>
-                                <a class="transition duration-500 text-[#E0E7E9] px-5 py-2 rounded-xl hover:bg-[#6C7A89] active:bg-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="transition duration-500 text-white bg-primary-500 px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li>
-                                <a class="transition duration-500 bg-[#70a48a] text-white px-5 py-2 rounded-xl hover:bg-[#4dba84] active:bg-[#70a48a]" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                 </ul>

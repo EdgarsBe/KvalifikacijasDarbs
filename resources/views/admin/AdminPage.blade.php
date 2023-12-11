@@ -13,42 +13,44 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @vite('resources/css/app.css')
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-    <body class="w-full max-h-[200vh] min-h-[100vh] bg-[#E0E7E9] font-[Poppins] flex items-center gap-[35vw]">
-            <div class="w-[13vw] sidebar sticky top-0 bottom-0
-                p-2 w-[300px] overflow-y-auto text-center bg-[#354649] border-r-[0.3vw] border-[#6C7A89] shadow h-screen">
-                <div class="text-[#E0E7E9] text-xl">
+    <body class="w-full h-full min-h-[100vh] bg-primary-100 font-[Poppins] flex">
+            <div class="w-1/6 sidebar sticky top-0 bottom-0
+                p-2 w-[300px] overflow-y-auto text-center bg-primary-400 border-r-[0.3vw] border-primary-300 shadow h-screen">
+                <div class="text-white text-xl">
                     <div class="p-2.5 mt-1 flex items-center rounded-md ">
-                        <h1 class="text-[15px]  ml-3 text-xl text-[#E0E7E9] font-bold">Master Admin</h1>
+                        <h1 class="text-[15px]  ml-3 text-xl text-white font-bold">Master Admin</h1>
                     </div>
                     <hr class="my-2 text-gray-600">
 
                     <div>
                         <a href="{{ url('/Admin') }}">
-                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-[#6C7A89]">
-                                <span class="text-[15px] ml-4 text-[#E0E7E9]">Dashboard</span>
+                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary-600">
+                                <span class="text-[15px] ml-4 text-white">Dashboard</span>
                             </div>
                         </a>
                         <a href="{{ url('/Admin/Products') }}">
-                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-[#6C7A89]">
-                                <span class="text-[15px] ml-4 text-[#E0E7E9]">Products</span>
+                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary-600">
+                                <span class="text-[15px] ml-4 text-white">Products</span>
                             </div>
                         </a>
                         <a href="{{ url('/Admin/Users') }}">
-                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-[#6C7A89]">
-                                <span class="text-[15px] ml-4 text-[#E0E7E9]">Users</span>
+                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary-600">
+                                <span class="text-[15px] ml-4 text-white">Users</span>
                             </div>
                         </a>
                         <a href="{{ url('/MyProfile') }}">
-                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-[#6C7A89]">
-                                <span class="text-[15px] ml-4 text-[#E0E7E9]">Logout</span>
+                            <div class="p-2.5 mt-2 flex rounded-md px-4 duration-300 cursor-pointer  hover:bg-primary-600">
+                                <span class="text-[15px] ml-4 text-white">Logout</span>
                             </div>
                         </a>
 
                     </div>
                 </div>
             </div>
+            <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

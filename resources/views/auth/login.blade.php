@@ -6,8 +6,8 @@
         <div class="pt-40">
             <div class="flex justify-center items-center">
 
-                <div class="w-1/4 px-8 py-10 rounded-3xl border-[#6C7A89] border-2 bg-[#354649]">
-                    <div class="text-[#E0E7E9] text-center text-4xl">{{ __('Login') }}</div>
+                <div class="w-1/4 px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
+                    <div class="text-white text-center text-4xl">{{ __('Login') }}</div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         @error('email')
@@ -16,17 +16,17 @@
                                 </span>
                         @enderror
                         <div class="w-full h-1/2 my-5">
-                        <label class="text-[#E0E7E9]" for="email">{{ __('Email Address') }}</label>
+                        <label class="text-white" for="email">{{ __('Email Address') }}</label>
                             <div class="relative">
-                                <input id="email" type="email" class="pl-[1vw] pr-[2.5vw] outline-none border-2 rounded-full w-full h-12 bg-white form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" type="email" class="pl-[1vw] pr-[2.5vw] outline-none border-primary-300 border-2 rounded-full w-full h-12 bg-white form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                 <i class='top-[0.65rem] right-3 absolute text-[1.7rem] bx bxs-user'></i>
                             </div>
                         </div>
 
                         <div class="w-full h-1/2 my-5">
-                        <label for="password" class="text-[#E0E7E9]">{{ __('Password') }}</label>
+                        <label for="password" class="text-white">{{ __('Password') }}</label>
                             <div class="relative">
-                                <input id="password" type="password" class="pl-[1vw] pr-[2.5vw] outline-none border-2 rounded-full w-full h-12 bg-white form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" class="pl-[1vw] pr-[2.5vw] outline-none border-primary-300 border-2 rounded-full w-full h-12 bg-white form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                 <i class='top-[0.65rem] right-3 absolute text-[1.7rem] bx bxs-lock-alt' ></i>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -42,12 +42,12 @@
                                     <div>
                                         <input class="form-check-input " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                        <label  class="text-[#E0E7E9] form-check-label" for="remember">
+                                        <label  class="text-white form-check-label" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
                                     @if (Route::has('password.request'))
-                                    <a class="btn btn-link text-[#E0E7E9]" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link text-white" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                     @endif
@@ -57,7 +57,7 @@
 
                         <div>
                             <div>
-                                <button type="submit" class="text-[#E0E7E9] mt-[2vh] transition duration-500 px-5 py-2 rounded-xl hover:bg-[#6C7A89] active:bg-white w-full btn btn-primary">
+                                <button type="submit" class="text-white mt-[2vh] transition duration-500 px-5 py-2 rounded-xl bg-primary-500 hover:bg-primary-600 active:bg-primary-700 w-full btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
                             </div>

@@ -23,16 +23,16 @@ Auth::routes();
 
 Route::get('/MyProfile', [App\Http\Controllers\HomeController::class, 'index'])->name('MyProfile');
 
+// Products Admin routes
 Route::post('/ProductAdd', [ProductsController::class, 'store'])->name('ProductAdd.store');
+Route::get('/Admin/Products', [ProductsController::class, 'showProducts'])->name('admin.Products');
+Route::delete('/Admin/Products', [ProductsController::class, 'deleteProducts'])->name('/Admin/Products');
+Route::put('/ProductUpdate', [ProductsController::class, 'updateProducts'])->name('ProductUpdate');
 
 Route::post('/Admin', [ProductsController::class, 'store'])->name('Admin.store');
 
 Route::get('/Admin', function () {
     return view('admin/AdminPage');
-});
-
-Route::get('/Admin/Products', function () {
-    return view('admin/Products');
 });
 
 Route::get('/Admin/Users', function () {
