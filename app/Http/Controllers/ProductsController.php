@@ -49,9 +49,18 @@ class ProductsController extends Controller
 
     public function updateProducts(Request $request) 
     {
+        $validated = $request->validate([
+            'Title' => 'required',
+            'Summary' => 'required',
+            'Price' => 'required|min:0',
+            'ReleaseDate' => 'required|date',
+            'Developer' => 'required',
+            'Publisher' => 'required',
+        ]);
+
         $id = $request->input('id');
-        $data = Product::findOrFail($id);
-        $data->update($request->all());
+        $validated = Product::findOrFail($id);
+        $validated->update($request->all());
 
         return redirect()->route('admin.Products')->with('success', 'Product has been succeesfully updated!');
     }

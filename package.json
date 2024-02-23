@@ -4,7 +4,7 @@
     "scripts": {
         "build-css": "tailwindcss build resources/css/app.css -o public/styles.css",
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build --base=.//"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.16",

@@ -3,16 +3,41 @@
 @section('content')
 <div>
     <div>
-        <div class="pt-40">
+        <div class="pt-20">
             <div class="flex justify-center items-center">
 
                 <div class="w-1/4 px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
                     <div class="text-white text-center text-4xl">{{ __('Register') }}</div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="w-full h-1/2 my-5">
-                            <label for="name" class="text-white col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                            <label for="firstname" class="text-white col-md-4 col-form-label text-md-end">{{ __('Firstname') }}</label>
+
+                            <div class="relative">
+                                <input id="firstname" type="text" class="pl-[1vw] pr-[2.5vw] outline-none border-primary-300 border-2 rounded-full w-full h-12 bg-white form-control @error('name') is-invalid @enderror" name="firstname" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <i class='top-[0.65rem] right-3 absolute text-[1.7rem] bx bxs-user'></i>
+                                @error('firstname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="w-full h-1/2 my-5">
+                            <label for="lastname" class="text-white col-md-4 col-form-label text-md-end">{{ __('Lastname') }}</label>
+
+                            <div class="relative">
+                                <input id="lastname" type="text" class="pl-[1vw] pr-[2.5vw] outline-none border-primary-300 border-2 rounded-full w-full h-12 bg-white form-control @error('name') is-invalid @enderror" name="lastname" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <i class='top-[0.65rem] right-3 absolute text-[1.7rem] bx bxs-user'></i>
+                                @error('lastname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="w-full h-1/2 my-5">
+                            <label for="name" class="text-white col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
 
                             <div class="relative">
                                 <input id="name" type="text" class="pl-[1vw] pr-[2.5vw] outline-none border-primary-300 border-2 rounded-full w-full h-12 bg-white form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>

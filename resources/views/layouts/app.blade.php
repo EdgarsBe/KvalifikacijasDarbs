@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @vite('resources/css/app.css')
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -17,15 +18,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://c64c-85-254-74-243.ngrok-free.app/build/assets/app-569c8538.css">
 
     <!-- Scripts -->
-    @vite('resources/css/app.css')
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @vite('resources/css/app.css')
+    @vite('resources/js/app.js')
 </head>
 <body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
-    <div id="app">
-        <nav class="border-b-[0.5vh] border-primary-300 bg-primary-400 ">
+    <div id="app" class="h-screen">
+        <nav class="border-b-[0.5vh] border-primary-300 bg-primary-400">
             <div class="p-[1vh] flex justify-between items-center w-[92%] mx-auto">
                 <ul>
                     <a href="{{ url('/') }}">
@@ -34,7 +36,7 @@
                 </ul>
                 <ul class="pl-[3vw] flex items-center gap-[4vw]">
                     <li>
-                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Browse</a>
+                        <a class="text-white hover:text-hover active:text-active transition duration-300" href="{{ url('/Browse') }}">Browse</a>
                     </li>
                     <li>
                         <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Categories</a>
@@ -94,7 +96,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 h-[90%]">
             @yield('content')
         </main>
     </div>

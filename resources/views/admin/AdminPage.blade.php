@@ -15,7 +15,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @vite('resources/css/app.css')
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite('resources/js/app.js')
 </head>
     <body class="w-full h-full min-h-[100vh] bg-primary-100 font-[Poppins] flex">
             <div class="w-1/6 sidebar sticky top-0 bottom-0
@@ -51,6 +51,5 @@
                     </div>
                 </div>
             </div>
-            <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @vite('resources/css/app.css')
         <title>BEAM</title>
 
         <!-- Fonts -->
@@ -13,7 +12,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://c64c-85-254-74-243.ngrok-free.app/build/assets/app-569c8538.css">
+        @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
     </head>
     <body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
         <div>
@@ -29,7 +30,7 @@
                     </ul>
                     <ul class="flex items-center gap-[4vw]">
                         <li>
-                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Browse</a>
+                            <a class="text-white hover:text-hover active:text-active transition duration-300" href="{{ url('/Browse') }}">Browse</a>
                         </li>
                         <li>
                             <a class="text-white hover:text-hover active:text-active transition duration-300" href="#">Categories</a>

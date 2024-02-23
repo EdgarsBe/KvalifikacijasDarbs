@@ -8,6 +8,7 @@ export default {
     theme: {
         colors: {
             primary: {
+                50: '#f5f8f8',
                 100: '#e1ecec',
                 200: '#c6dbda',
                 300: '#9ec2c2',

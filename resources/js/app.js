@@ -68,4 +68,32 @@ $(document).ready(function() {
         $('#ProductSel').css('display', 'block');
         $('#ProductDel').css('display', 'none');
     });
+    //User Account Delete form
+    $('#DeleteBtn').click(function(e) {
+        e.preventDefault();
+        $('#Dashboard').css('display', 'none');
+        $('#DeleteForm').css('display', 'flex');
+    });
+
+    $('#StopDelete').click(function(e) {
+        e.preventDefault();
+        $('#Dashboard').css('display', 'block');
+        $('#DeleteForm').css('display', 'none');
+    });
+    //User Password update form
+    $('#UpdateBtn').click(function(e) {
+        e.preventDefault();
+        $('#Dashboard').css('display', 'none');
+        $('#PasswordForm').css('display', 'flex');
+    });
+
+    $('#StopPass').click(function(e) {
+        e.preventDefault();
+        $('#Dashboard').css('display', 'block');
+        $('#PasswordForm').css('display', 'none');
+    });
+
+    $('#fileUpload').click(function() {
+        $('#fileInput').trigger('click');
+    })
 });
