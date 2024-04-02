@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         //Produktu pievienošanas metode
-        
+
         $validated = $request->validate([
             'Title' => 'required',
             'Summary' => 'required',
@@ -20,7 +20,7 @@ class ProductsController extends Controller
             'Publisher' => 'required',
         ]);
         Product::create($validated);
-        
+
         return redirect('/Admin/Products')->with('success', 'Product Added Successfully!');
     }
 
@@ -32,10 +32,27 @@ class ProductsController extends Controller
         return view('admin/Products', ['products' => $products]);
     }
 
+    public function showProductsBrowse()
+    {
+        //Produktu izvade browse lapā
+        $products = Product::all();
+
+        return view('Browse', ['products' => $products]);
+    }
+
+    public function showProductsDetail(Request $request)
+    {
+        //Produkta detalizētās lapas info izvade
+        $productId = $request->query('id');
+        $product = Product::find($productId);
+
+        return view('productPage', ['product' => $product]);
+    }
+
     public function deleteProducts(Request $request)
     {
         if($request->has('row=ids')) {
-            $ids = $request->input('row=ids');        
+            $ids = $request->input('row=ids');
 
             Product::whereIn('id', $ids)->delete();
 
@@ -47,7 +64,7 @@ class ProductsController extends Controller
         }
     }
 
-    public function updateProducts(Request $request) 
+    public function updateProducts(Request $request)
     {
         $validated = $request->validate([
             'Title' => 'required',

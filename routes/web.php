@@ -31,6 +31,8 @@ Route::delete('/MyProfile/DeleteAccount', [HomeController::class, 'deleteAccount
 Route::put('/MyProfile/UpdatePassword', [HomeController::class, 'updatePass'])->name('UpdatePassword');
 Route::post('/MyProfileChange', [HomeController::class, 'changeName'])->name('ChangeName');
 Route::put('/PFPChange', [HomeController::class, 'changePFP'])->name('ChangePFP');
+Route::get('/Browse', [ProductsController::class, 'showProductsBrowse'])->name('browse');
+
 
 // Products Admin routes
 Route::post('/ProductAdd', [ProductsController::class, 'store'])->name('ProductAdd.store');
@@ -45,7 +47,5 @@ Route::get('/Admin/Users', function () {
     return view('admin/Users');
 });
 
-Route::get('/Browse', function () {
-    return view('browse');
-});
+Route::get('/productPage', [ProductsController::class, 'showProductsDetail'])->name('productPage');
 
