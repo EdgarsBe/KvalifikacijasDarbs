@@ -95,5 +95,14 @@ $(document).ready(function() {
 
     $('#fileUpload').click(function() {
         $('#fileInput').trigger('click');
-    })
+    });
+
+    $('#menuClick').click(function() {
+        let currentName = $(this).attr('name');
+        let newName = currentName === 'menu-outline' ? 'close-outline' : 'menu-outline';
+        $(this).attr('name', newName);
+
+        $("#nav-links").toggleClass('top-[-100%]');
+        $("#nav-links").toggleClass('top-[9%]');
+    });
 });

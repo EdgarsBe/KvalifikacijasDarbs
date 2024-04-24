@@ -6,7 +6,7 @@
         <div class="pt-20">
             <div class="flex justify-center items-center">
 
-                <div class="w-1/4 px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
+                <div class="md:w-[600px] w-[300px] px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
                     <div class="text-white text-center text-4xl">{{ __('Register') }}</div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

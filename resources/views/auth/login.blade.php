@@ -6,7 +6,7 @@
         <div class="pt-40">
             <div class="flex justify-center items-center">
 
-                <div class="w-1/4 px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
+                <div class="md:w-[600px] w-[300px] px-8 py-10 rounded-3xl border-primary-300 border-2 bg-primary-400">
                     <div class="text-white text-center text-4xl">{{ __('Login') }}</div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -38,7 +38,7 @@
 
                         <div>
                             <div>
-                                <div class="flex justify-between">
+                                <div class="flex-col flex md:flex-row justify-between gap-4">
                                     <div>
                                         <input class="form-check-input " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
