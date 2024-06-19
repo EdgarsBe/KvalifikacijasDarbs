@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*icon custom color*/
+
+ion-icon {
+    color: white
+}
+
+
+/* Custom scrollbar styles */
+
+.scrollable-box::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+    @apply bg-primary-400 rounded-lg;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+    @apply bg-primary-950 rounded-lg;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-700;
+}
