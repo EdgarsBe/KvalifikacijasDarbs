@@ -27,16 +27,16 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
 </head>
-<body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
+<body class="max-h-[200vh] min-h-[100vh] bg-primary-950 font-[Poppins]">
     <div id="app" class="h-screen">
-        <nav class="h-[9vh] border-b-[0.5vh] border-primary-300 bg-primary-400">
+        <nav class="h-[9vh] border-b-[0.5vh] border-primary-900 bg-primary-950">
             <div class="h-[9vh] p-[1vh] flex justify-between items-center w-[92%] mx-auto">
                 <ul>
                     <a href="{{ url('/') }}">
                         <img class="object-scale-down h-10 w-30" src="/images/LogoFullLight.png"></img>
                     </a>
                 </ul>
-                <div id="nav-links" class="md:static absolute bg-primary-400 z-10 md:min-h-fit min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+                <div id="nav-links" class="md:static absolute bg-primary-950 z-10 md:min-h-fit min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
                     <ul class="pl-[3vw] flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-[4vw]">
                         <li>
                             <a class="text-white hover:text-hover active:text-active transition duration-300" href="{{ url('/Browse') }}">Browse</a>
@@ -57,13 +57,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li>
-                                <a class="transition duration-500 text-white bg-primary-500 px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="transition duration-500 border-primary-950 text-white bg-primary-900 px-5 py-2 rounded-lg hover:bg-primary-800 hover:border-border-cyan border-2 active:bg-primary-900" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('register'))
                             <li>
-                                <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="transition duration-500 border-primary-950 bg-primary-900 text-white px-5 py-2 rounded-lg hover:bg-primary-800 hover:border-border-purple border-2 active:bg-primary-900" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                             <li class="flex items-center">
@@ -72,20 +72,26 @@
                 </ul>
                     @else
                 <ul class="flex items-center">
-                    <li class="text-[#E0E7E9] group hover:bg-[#6C7A89] p-2 right-0">
+                    <li class="flex items-center mr-4 text-2xl">
+                        <a href="{{ url('/Basket') }}">
+                            <ion-icon name="basket-outline"></ion-icon>
+                        </a>
+                    </li>
+                    <li class="text-[#E0E7E9] group hover:text-white p-2 right-0">
                         Options
-                            <ul class="absolute hidden group-hover:block bg-[#6C7A89] p-2">
+                        <ion-icon name="caret-down-outline"></ion-icon>
+                            <ul class="hidden absolute group-hover:flex group-hover:flex-col gap-2 mt-2 p-2 right-[3.1rem]">
                                 <li>
-                                    <a href="{{ url('/Admin') }}">Admin Panel</a>
+                                    <a class="flex hover:text-gray transition-colors p-2 bg-primary-800 w-32 border-2 border-primary-900 hover:border-border-purple" href="{{ url('/Admin') }}">Admin Panel</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/MyProfile') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a class="flex hover:text-gray transition-colors p-2 bg-primary-800 w-32 border-2 border-primary-900 hover:border-border-purple" href="{{ url('/MyProfile') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
                                 </li>
                                 <li>
                                     <div>
-                                        <a href="{{ route('logout') }}"
+                                        <a class="flex hover:text-gray transition-colors p-2 bg-primary-800 w-32 border-2 border-primary-900 hover:border-border-purple" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}

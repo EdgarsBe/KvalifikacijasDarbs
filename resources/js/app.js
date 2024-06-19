@@ -1,4 +1,23 @@
 import './bootstrap';
+
+$(document).ready(function() {
+    var slideWidth = $('.flex > div').first().outerWidth();
+    var currentPosition = 0;
+
+    $('.next-button').click(function() {
+        if (currentPosition > -((($('.flex > div').length - 1) * slideWidth) - slideWidth)) {
+            currentPosition -= slideWidth;
+            $('.flex').css('transform', 'translateX(' + currentPosition + 'px)');
+        }
+    });
+
+    $('.prev-button').click(function() {
+        if (currentPosition < 0) {
+            currentPosition += slideWidth;
+            $('.flex').css('transform', 'translateX(' + currentPosition + 'px)');
+        }
+    });
+});
 //Induvidual Row Data Popup with edit functions
 $(document).ready(function() {
     function DataHandling() {
@@ -9,10 +28,12 @@ $(document).ready(function() {
         var ReleaseDate = $(this).data('releasedate');
         var Developer = $(this).data('developer');
         var Publisher = $(this).data('publisher');
+        var name = $(this).data('name');
 
         var IdContents = id;
         var TextContents = Summary;
 
+        $('#name').val(name);
         $('#id').val(id);
         $('#Title').val(Title);
         $('#Price').val(Price);

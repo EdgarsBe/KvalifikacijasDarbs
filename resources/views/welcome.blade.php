@@ -21,10 +21,10 @@
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
     </head>
-    <body class="max-h-[200vh] min-h-[100vh] bg-primary-100 font-[Poppins]">
+    <body class="max-h-[200vh] min-h-[100vh] bg-primary-950 font-[Poppins]">
         <div>
             @if (Route::has('login'))
-            <header class="h-[9vh] border-b-[0.5vh] border-primary-300 bg-primary-400">
+            <header class="h-[9vh] border-b-[0.5vh] border-primary-900 bg-primary-950">
                 <nav class="h-[9vh] p-[1vh] flex justify-between items-center w-[92%] mx-auto">
                     <ul>
                         <li>
@@ -33,7 +33,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div id="nav-links" class="md:static absolute bg-primary-400 z-10 md:min-h-fit min-h-[35vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+                    <div id="nav-links" class="md:static absolute bg-primary-950 z-10 md:min-h-fit min-h-[35vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
                         <ul class="pl-[3vw] flex md:flex-row flex-col md:items-center md:gap-[2vw] gap-[4vw]">
                             <li>
                                 <a class="text-white hover:text-hover active:text-active transition duration-300" href="{{ url('/Browse') }}">Browse</a>
@@ -97,11 +97,11 @@
                         @else
                     <ul class="flex items-center gap-[0.2vw]">
                         <li class="md:visible invisible">
-                            <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('login') }}">Log in</a>
+                            <a class="transition duration-500 bg-primary-900 border-primary-950 text-white px-5 py-2 rounded-lg hover:bg-primary-800 hover:border-border-cyan border-2 active:bg-primary-900" href="{{ route('login') }}">Log in</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="md:visible invisible">
-                            <a class="transition duration-500 bg-primary-500 text-white px-5 py-2 rounded-xl hover:bg-primary-600 active:bg-primary-700" href="{{ route('register') }}">Register</a>
+                            <a class="transition duration-500 bg-primary-900 border-primary-950 text-white px-5 py-2 rounded-lg hover:bg-primary-800 hover:border-border-purple border-2 active:bg-primary-900" href="{{ route('register') }}">Register</a>
                         </li>
                         <li class="flex items-center">
                             <ion-icon id="menuClick" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
@@ -113,5 +113,6 @@
             </header>
             @endif
         </div>
+        <img class="object-scale-down w-5/12 absolute right-32 bottom-2" src="/images/cool.png"></img>
     </body>
 </html>

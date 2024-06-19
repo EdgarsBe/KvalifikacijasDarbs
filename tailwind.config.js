@@ -8,23 +8,31 @@ export default {
     theme: {
         colors: {
             primary: {
-                50: '#f5f8f8',
-                100: '#e1ecec',
-                200: '#c6dbda',
-                300: '#9ec2c2',
-                400: '#6fa1a1',
-                500: '#538587',
-                600: '#486f72',
-                700: '#3f5c5f',
-                800: '#394e51',
-                900: '#354649',
+                50: '#f6f6f6',
+                100: '#e7e7e7',
+                200: '#d1d1d1',
+                300: '#b0b0b0',
+                400: '#888888',
+                500: '#6d6d6d',
+                600: '#5d5d5d',
+                700: '#4f4f4f',
+                800: '#454545',
+                900: '#3d3d3d',
+                950: '#1D1C1A',
+            },
+            border: {
+                purple: '#B026FF',
+                cyan: '#00fefc',
             }
         },
 
         textColor: {
+            purple: '#B026FF',
             white: '#fff',
-            hover: '#9ec2c2',
+            hover: '#6d6d6d',
             active: '#c6dbda',
+            black: '#000',
+            gray: '#A9A9A9',
         },
 
         extend: {},
